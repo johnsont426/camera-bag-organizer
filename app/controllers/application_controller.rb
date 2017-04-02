@@ -27,8 +27,33 @@ class ApplicationController < Sinatra::Base
 		else
 			user = User.new(params)
 			user.save
+			redirect '/login'
 		end
 
 	end
+
+	get '/login' do
+		erb :login
+	end
+
+	post '/login' do
+		@user = User.find_by(username: params)
+		if !@user
+			flash[:message] = "Can't find the username"
+			redirect '/login'
+		elsif @user && !@user.authenticate(params[:password])
+			flash[:message] = "Wrong password"
+			redirect '/login'
+		else
+			session[:user_id] = @user.id
+			redirect '/bags'
+		end
+	end
+
+
+
+
+
+
 
 end
