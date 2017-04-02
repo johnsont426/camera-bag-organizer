@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170401061432) do
+ActiveRecord::Schema.define(version: 20170402001801) do
 
   create_table "bags", force: :cascade do |t|
     t.string  "type"
@@ -28,6 +28,11 @@ ActiveRecord::Schema.define(version: 20170401061432) do
     t.string  "type"
     t.integer "weight"
     t.integer "camera_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
   end
 
 end
