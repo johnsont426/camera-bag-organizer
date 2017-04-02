@@ -1,1 +1,6 @@
-<h1></h1>
+<h1>Your Camera Bag:</h1>
+<% @user.bags.each_with_index do |bag, index| %>
+	<h2><a href="/bags/<%= bag.id %>">Bag <%= index + 1 %></a></h2>
+<% end %>
+	
+
