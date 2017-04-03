@@ -1,9 +1,10 @@
-<h1><%= @bag.type %></h1>
+<h1><%= @bag.bag_type %></h1>
 <h1>Camera: <%= @bag.cameras.size %> Lens: <%= @bag.lenses.size %></h1>
-<%= bag.cameras.each do |camera|%>
+<% @bag.cameras.each do |camera|%>
 	<h2><%= camera.name %></h2>
 <% end %>
-<% bag.lenses.each do |lens|%>
+<% @bag.lenses.each do |lens|%>
 	<h2><%= lens.name %></h2>
 <% end %>
+<a href="/bags/<%= @bag.id %>/edit">Edit This Bag</a>
 

@@ -1,7 +1,8 @@
-<h1>Add a new camera bag</h1>
-<form action="/bags" method="post">
+<h1>Edit Your Bag</h1>
+<form action="/bags/<%= @bag.id %>" method="post">
+	<input type="hidden" name="_method" value="patch">
 	<label>Bag Type:</label>
-	<input type="text" name="bag_type">
+	<input type="text" name="bag_type" value="<%= @bag.bag_type %>">
 	<br>
 	<h2>Cameras:</h2>
 	<h3>===Camera 1===</h3>
@@ -43,5 +44,5 @@
 	<label>Lens Weight:</label>
 	<input type="text" name="lenses[][weight]">
 	<br>
-	<input type="submit" value="create bag">
+	<input type="submit" value="update bag">
 </form>

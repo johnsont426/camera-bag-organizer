@@ -7,4 +7,8 @@ ActiveRecord::Base.establish_connection(
 	:database => "db/development.sqlite"
 )
 
+ActiveSupport::Inflector.inflections do |inflect|
+	inflect.irregular 'lens', 'lenses'
+end
+
 require_all 'app'
