@@ -1,7 +1,9 @@
+<h1><%= @bag.type %></h1>
 <h1>Camera: <%= @bag.cameras.size %> Lens: <%= @bag.lenses.size %></h1>
 <%= bag.cameras.each do |camera|%>
 	<h2><%= camera.name %></h2>
-	<% camera.lenses.each do |lens|%>
-		<h3><%= lens.name %></h3>
-	<% end %>
 <% end %>
+<% bag.lenses.each do |lens|%>
+	<h2><%= lens.name %></h2>
+<% end %>
+

@@ -1,5 +1,5 @@
 class Bag < ActiveRecord::Base
-	has_many :camera
-	has_many :lenses, through: :cameras
+	has_many :cameras
+	has_many :lenses
 	belongs_to :user
 end

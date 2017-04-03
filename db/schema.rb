@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170402001801) do
+ActiveRecord::Schema.define(version: 20170403015720) do
 
   create_table "bags", force: :cascade do |t|
     t.string  "type"
@@ -18,14 +18,13 @@ ActiveRecord::Schema.define(version: 20170402001801) do
   end
 
   create_table "cameras", force: :cascade do |t|
-    t.string  "brand"
+    t.string  "name"
     t.integer "weight"
     t.integer "bag_id"
   end
 
   create_table "lenses", force: :cascade do |t|
-    t.string  "brand"
-    t.string  "type"
+    t.string  "name"
     t.integer "weight"
     t.integer "camera_id"
   end

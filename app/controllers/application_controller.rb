@@ -50,13 +50,6 @@ class ApplicationController < Sinatra::Base
 		end
 	end
 
-	get '/bags/new' do
-		if logged_in?
-			erb :'bags/new'
-		else
-			redirect '/login'
-		end
-	end
 
 	helpers do
 

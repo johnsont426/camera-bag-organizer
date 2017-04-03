@@ -1,3 +1,3 @@
 class Lens < ActiveRecord::Base
-	belongs_to :camera
+	belongs_to :bag
 end
