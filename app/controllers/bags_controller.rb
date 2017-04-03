@@ -29,17 +29,7 @@ class BagsController < ApplicationController
 
 	post '/bags' do
 		user = current_user
-		bag = user.bags.build(bag_type: params[:bag_type])
-		params[:cameras].each do |camera_hash|
-			if !camera_hash.has_value?("")
-				bag.cameras.build(camera_hash)
-			end
-		end
-		params[:lenses].each do |lens_hash|
-			if !lens_hash.has_value?("")
-				bag.lenses.build(lens_hash)
-			end
-		end
+		bag = user.bags.build(params)
 		user.save
 		redirect "/bags"
 	end
@@ -55,19 +45,8 @@ class BagsController < ApplicationController
 
 	patch '/bags/:id' do
 		bag = Bag.find(params[:id])
-		bag.bag_type = params[:bag_type]
-		bag.cameras.clear
-		bag.lenses.clear
-		params[:cameras].each do |camera_hash|
-			if !camera_hash.has_value?("")
-				bag.cameras.build(camera_hash)
-			end
-		end
-		params[:lenses].each do |lens_hash|
-			if !lens_hash.has_value?("")
-				bag.lenses.build(lens_hash)
-			end
-		end
+		bag.update(camera_ids: params[:camera_ids])
+		bag.update(lens_ids: params[:lens_ids])
 		bag.save
 		redirect "/bags/#{bag.id}"
 	end

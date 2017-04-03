@@ -6,16 +6,18 @@
 	<h2>Cameras:</h2>
 	<h3>Add existing cameras in your bag:</h3>
 	<% Camera.all.each do |camera| %>
-	<label><%= camera.name %></label>
-	<input type="checkbox" name="camera_ids[]" value="<%= camera.id %>">
+		<label><%= camera.name %>(<%= camera.weight %>g)</label>
+		<input type="checkbox" name="camera_ids[]" value="<%= camera.id %>">
+		<br>
 	<% end %>
 	<h3>Or create <a href="/cameras/new">new camera</a></h3>
 	<br><br>
 	<h2>Lenses:</h2>
 	<h3>Add existing lenses in your bag:</h3>
 	<% Lens.all.each do |lens| %>
-	<label><%= lens.name %></label>
-	<input type="checkbox" name="lens_ids[]" value="<%= lens.id %>">
+		<label><%= lens.name %>(<%= lens.weight %>g)</label>
+		<input type="checkbox" name="lens_ids[]" value="<%= lens.id %>">
+		<br>
 	<% end %>
 	<h3>Or create <a href="/lenses/new">new lens</a></h3>
 	<input type="submit" value="create bag">
