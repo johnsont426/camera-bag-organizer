@@ -72,6 +72,15 @@ class BagsController < ApplicationController
 		redirect "/bags/#{bag.id}"
 	end
 
+	delete '/bags/:id' do
+		bag = Bag.find(params[:id])
+		if bag.user = current_user
+			bag.delete
+			redirect '/bags'
+		else
+			redirect '/bags'
+		end
+	end
 
 
 end

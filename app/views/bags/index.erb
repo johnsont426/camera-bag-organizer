@@ -2,6 +2,8 @@
 <% @user.bags.each_with_index do |bag, index| %>
 	<h2><a href="/bags/<%= bag.id %>">Bag <%= index + 1 %></a>(<%= bag.bag_type %>)</h2>
 	<h3>Weight: <%= bag_weight(bag) %>g</h3>
+	<form action="/bags/<%= bag.id %>" method="post">
+		<input type="hidden" name="_method" value="delete">
+		<input type="submit" value="delete">
+	</form>
 <% end %>
-	
-
