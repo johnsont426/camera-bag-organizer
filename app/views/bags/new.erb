@@ -1,0 +1,60 @@
+<h1>Add a new camera bag</h1>
+<form action="/bags" method="post">
+	<label>Bag Name:</label>
+	<input type="text" name="name">
+	<br>
+	<h3>Camera 1:</h3>
+	<label>Camera Name:</label>
+	<input type="text" name="cameras[][name]">
+	<br>
+	<label>Camera Weight:</label>
+	<input type="text" name="cameras[][weight]">
+	<br>
+	<h4>Lenses For This Camera:</h4>
+	<h5>Lens 1:</h5>
+	<label>Lens Name:</label>
+	<input type="text" name="cameras[][lenses][][name]">
+	<label>Lens Weight:</label>
+	<input type="text" name="cameras[][lenses][][weight]">
+	<br>
+	<h5>Lens 2:</h5>
+	<label>Lens Name:</label>
+	<input type="text" name="cameras[][lenses][][name]">
+	<label>Lens Weight:</label>
+	<input type="text" name="cameras[][lenses][][weight]">
+	<br>
+	<h5>Lens 3:</h5>
+	<label>Lens Name:</label>
+	<input type="text" name="cameras[][lenses][][name]">
+	<label>Lens Weight:</label>
+	<input type="text" name="cameras[][lenses][][weight]">
+	<br>
+	<input type="submit" value="create bag">
+	<h3>Camera 2:</h3>
+	<label>Camera Name:</label>
+	<input type="text" name="cameras[][name]">
+	<br>
+	<label>Camera Weight:</label>
+	<input type="text" name="cameras[][weight]">
+	<br>
+	<h4>Lenses For This Camera:</h4>
+	<h5>Lens 1:</h5>
+	<label>Lens Name:</label>
+	<input type="text" name="cameras[][lenses][][name]">
+	<label>Lens Weight:</label>
+	<input type="text" name="cameras[][lenses][][weight]">
+	<br>
+	<h5>Lens 2:</h5>
+	<label>Lens Name:</label>
+	<input type="text" name="cameras[][lenses][][name]">
+	<label>Lens Weight:</label>
+	<input type="text" name="cameras[][lenses][][weight]">
+	<br>
+	<h5>Lens 3:</h5>
+	<label>Lens Name:</label>
+	<input type="text" name="cameras[][lenses][][name]">
+	<label>Lens Weight:</label>
+	<input type="text" name="cameras[][lenses][][weight]">
+	<br>
+	<input type="submit" value="create bag">
+</form>

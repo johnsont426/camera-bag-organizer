@@ -17,7 +17,7 @@ class BagsController < ApplicationController
 			redirect '/login'
 		end
 	end
-
+	
 	get '/bags/:id' do
 		if logged_in?
 			@bag = Bag.find(params[:id])
