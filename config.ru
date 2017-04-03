@@ -8,4 +8,6 @@ end
 
 use Rack::MethodOverride
 use BagsController
+use CamerasController
+use LensesController
 run ApplicationController
