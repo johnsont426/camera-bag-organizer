@@ -82,5 +82,4 @@ class BagsController < ApplicationController
 		end
 	end
 
-
 end
