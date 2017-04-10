@@ -9,8 +9,16 @@ class CamerasController < ApplicationController
 	end
 
 	post '/cameras' do
-		Camera.create(params)
-		redirect '/bags'
+		if params[:name] == ""
+			flash[:message] = "The camera needs to have a name"
+			erb :'cameras/new'
+		elsif params[:weight] == ""
+			flash[:message] = "Weight can't be empty"
+			erb :'cameras/new'
+		else
+			Camera.create(params)
+			redirect '/bags'
+		end
 	end
 
 end

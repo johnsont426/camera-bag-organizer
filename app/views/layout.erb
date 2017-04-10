@@ -11,12 +11,12 @@
           <a class="navbar-brand" href="/">Camera Bag Organizer</a>
         </div>
         <% if logged_in? %>
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav navbar-right">
             <li><a href="/bags/new">Create Bag</a></li>
             <li><a href="/logout">Log Out</a></li>
           </ul>
         <% else %>
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav navbar-right">
             <li><a href="/signup">Sign Up</a></li>
             <li><a href="/login">Log In</a></li>
           </ul>
