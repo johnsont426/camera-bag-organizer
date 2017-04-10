@@ -7,10 +7,10 @@ class UsersController < ApplicationController
 	post '/signup' do
 		if params[:username] == "" || params[:password] == ""
 			flash[:message] = "Please enter username and password!"
-			redirect '/signup'
+			erb :'users/signup'
 		elsif params[:password].length < 8
 			flash[:message] = "Your password is too short!"
-			redirect '/signup'
+			erb :'users/signup'
 		else
 			user = User.new(params)
 			user.save
@@ -27,10 +27,10 @@ class UsersController < ApplicationController
 		@user = User.find_by(username: params[:username])
 		if !@user
 			flash[:message] = "Can't find the username"
-			redirect '/login'
+			erb :'users/login'
 		elsif @user && !@user.authenticate(params[:password])
 			flash[:message] = "Wrong password"
-			redirect '/login'
+			erb :'users/login'
 		else
 			session[:user_id] = @user.id
 			redirect '/bags'
@@ -41,5 +41,5 @@ class UsersController < ApplicationController
 		session.clear
 		redirect '/'
 	end
-	
+
 end
