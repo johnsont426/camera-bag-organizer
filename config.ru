@@ -10,4 +10,5 @@ use Rack::MethodOverride
 use BagsController
 use CamerasController
 use LensesController
+use UsersController
 run ApplicationController
