@@ -1,0 +1,11 @@
+<% @lenses.each do |lens| %>	
+
+	<h1><%= lens.name %></h1>
+	<h3><%= lens.weight %></h3>
+
+	<form action="/lenses/<%= lens.id %>" method="post">
+		<input type="hidden" name="_method" value="delete">
+		<input type="submit" value="Delete">
+	</form>
+
+<% end %>
