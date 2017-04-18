@@ -1,0 +1,7 @@
+<h1><%= @lens.name %></h1>
+<h4>weight: <%= @lens.weight %> g</h4>
+
+<form action="/lenses/<%= @lens.id %>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Delete">
+</form>

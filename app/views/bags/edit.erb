@@ -1,23 +1,24 @@
 <h1>Edit Your Bag</h1>
-<h2><%= @bag.bag_type %></h2>
+<h2>Bag Type: <%= @bag.bag_type %></h2>
 <form action="/bags/<%= @bag.id %>" method="post">
 	<input type="hidden" name="_method" value="patch">
+	
 	<h2>Cameras:</h2>
-	<h3>Add existing cameras in your bag:</h3>
 	<% Camera.all.each do |camera| %>
 		<label><%= camera.name %>(<%= camera.weight %>g)</label>
 		<input type="checkbox" name="camera_ids[]" value="<%= camera.id %>" <%= 'checked' if @bag.camera_ids.include?(camera.id)%>>
 		<br>
 	<% end %>
-	<h3>Or create <a href="/cameras/new">new camera</a></h3>
+	<h3><a href="/cameras/new">create new camera</a></h3>
 	<br><br>
+
 	<h2>Lenses:</h2>
-	<h3>Add existing lenses in your bag:</h3>
 	<% Lens.all.each do |lens| %>
 		<label><%= lens.name %>(<%= lens.weight %>g)</label>
 		<input type="checkbox" name="lens_ids[]" value="<%= lens.id %>" <%= 'checked' if @bag.lens_ids.include?(lens.id)%>>
 		<br>
 	<% end %>
-	<h3>Or create <a href="/lenses/new">new lens</a></h3>
+	<h3><a href="/lenses/new">create new lens</a></h3>
+	<br><br>
 	<input type="submit" value="update bag">
 </form>

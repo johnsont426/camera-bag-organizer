@@ -17,13 +17,13 @@ class LensesController < ApplicationController
 			erb :'lenses/new'
 		else
 			Lens.create(params)
-			redirect '/bags/new'
+			redirect '/bags'
 		end
 	end
 
-	get '/lenses' do
-		@lenses = Lens.all
-		erb :'lenses/index'
+	get '/lenses/:id' do
+		@lens = Lens.find(params[:id])
+		erb :'lenses/show'
 	end
 
 	delete '/lenses/:id' do

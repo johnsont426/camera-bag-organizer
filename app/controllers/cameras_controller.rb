@@ -17,13 +17,13 @@ class CamerasController < ApplicationController
 			erb :'cameras/new'
 		else
 			Camera.create(params)
-			redirect '/bags/new'
+			redirect '/bags'
 		end
 	end
 
-	get '/cameras' do
-		@cameras = Camera.all
-		erb :'cameras/index'
+	get '/cameras/:id' do
+		@camera = Camera.find(params[:id])
+		erb :'cameras/show'
 	end
 
 	delete '/cameras/:id' do

@@ -1,0 +1,7 @@
+<h1><%= @camera.name %></h1>
+<h4>weight: <%= @camera.weight %> g</h4>
+
+<form action="/cameras/<%= @camera.id %>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Delete">
+</form>

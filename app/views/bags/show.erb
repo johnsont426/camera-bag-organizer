@@ -1,13 +1,21 @@
-<h1><%= @bag.bag_type %></h1>
-<a href="/bags/<%= @bag.id %>/edit">Edit This Bag</a>
+<h1>Bag Type: <%= @bag.bag_type %></h1>
+<h4><a href="/bags/<%= @bag.id %>/edit">Edit This Bag</a></h4>
 <br>
-<h1>Camera: <%= @bag.cameras.size %></h1>
+
+<h2>Camera: <%= @bag.cameras.size %></h2>
+<ul>
 <% @bag.cameras.each do |camera|%>
-	<h2><%= camera.name %></h2>
+	<h4><%= camera.name %></h4>
+	<br>
 <% end %>
-<h1>Lens: <%= @bag.lenses.size %></h1>
+</ul>
+
+<h2>Lens: <%= @bag.lenses.size %></h2>
+<ul>
 <% @bag.lenses.each do |lens|%>
-	<h2><%= lens.name %></h2>
+	<h4><%= lens.name %></h4>
+	<br>
 <% end %>
-<h3>Total Weight: <%= bag_weight(@bag) %>g</h3s>
-<br>
+</ul>
+
+<h4>Total Weight: <%= bag_weight(@bag) %>g</h4>
